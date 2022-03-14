@@ -1,4 +1,4 @@
-<div style = "text-align: center;"> 
+<div align = "center"> 
     <img 
         src = "https://media.discordapp.net/attachments/486869413732155404/952965464240316546/ic_launcher_2_round.png" 
         alt = "App Icon" 
@@ -7,7 +7,7 @@
     >
 </div>
 
-<h1 style = "text-align: center;"> Material You Color Previewer </h1>
+<h1 align = "center"> Material You Color Previewer </h1>
 
 Use this simple app to view all available Material You colors. App will also show you the actual color ID, so you will be able to easily use it in your project.
 
