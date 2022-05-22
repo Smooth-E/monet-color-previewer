@@ -2,7 +2,12 @@
     <style name="Theme.MonetColorPreviewer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorSecondary">@color/accent1_10</item>
         <item name="colorOnPrimary">@color/accent1_100</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSecondary</item>
+        <item name="colorOnSecondary">@color/accent1_800</item>
+        <item name="colorPrimaryVariant">@color/accent1_200</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
         <item name="android:navigationBarColor">?attr/colorOnPrimary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

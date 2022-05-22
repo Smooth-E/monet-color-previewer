@@ -12,6 +12,9 @@
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/drawable/shape_rounded_top.xml" value="0.2565" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/activity_main.xml" value="0.35778985507246375" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/view_color_entry.xml" value="0.35778985507246375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/view_color_entry.xml" value="0.359375" />
+        <entry key="app/src/main/res/layout/view_color_row.xml" value="0.24864130434782608" />
       </map>
     </option>
   </component>

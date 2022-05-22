@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Previewer</string>
+    <string name="app_name_full">Monet Color Previewer</string>
 </resources>

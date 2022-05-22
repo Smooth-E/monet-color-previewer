@@ -1,97 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     android:weightSum="10"
-    android:background="@color/accent1_10">
+    android:background="?attr/colorOnPrimary"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/app_name_full"
+        android:textColor="?attr/colorOnSecondary"
+        android:gravity="center"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:id="@+id/colors_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:weightSum="13"
+        android:background="@drawable/shape_button"
+        android:backgroundTint="?attr/colorSecondary"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:padding="10dp">
 
-        <LinearLayout
-            android:layout_centerInParent="true"
+        <FrameLayout
+            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="@drawable/shape_button"
-            android:backgroundTint="@color/accent1_200"
-            android:padding="15dp">
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/button_download">
 
             <FrameLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/shape_button"
-                android:backgroundTint="@color/accent3_1000">
+                android:backgroundTint="?attr/colorPrimaryVariant">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_round_file_copy_24"
+                    app:tint="?attr/colorOnSecondary"
+                    android:padding="15dp"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_toLeftOf="@id/button_download"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/button_copy">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_button"
+                android:backgroundTint="?attr/colorPrimaryVariant">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_round_file_copy_24"
+                    app:tint="?attr/colorOnSecondary"
+                    android:padding="15dp"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_button"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:layout_toLeftOf="@id/button_copy"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <FrameLayout
+                android:id="@+id/color_droplet_outline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="?attr/colorOnSecondary"
+                android:background="@drawable/shape_button">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_round_file_copy_24"
+                    android:padding="100dp"/>
 
                 <FrameLayout
                     android:id="@+id/color_droplet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
                     android:background="@drawable/shape_button"
-                    android:backgroundTint="@color/neutral1_10"/>
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    android:layout_margin="2dp" />
 
             </FrameLayout>
 
             <TextView
-                android:paddingLeft="15dp"
-                android:id="@+id/color_name_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" @android:color/system_neutral1_100 "
-                android:textColor="@color/accent3_1000"
-                android:textSize="17sp"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:background="@drawable/shape_rounded_top"
-        android:backgroundTint="@color/accent1_100">
-
-        <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
-            android:layout_margin="15dp"
-            app:porterduffxfermode="DST_IN"
-            app:mask="@drawable/shape_button"
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:background="@drawable/shape_button"
-            android:backgroundTint="@color/accent1_100">
-
-            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="none">
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/color_droplet_outline"
+                android:id="@+id/color_name_text_view"
+                android:layout_marginLeft="10dp"
+                android:text=" @color/accent1_1000 "
+                android:gravity="center"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="15sp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/colors_list">
+        </RelativeLayout>
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"/>
-
-                </LinearLayout>
-
-            </ScrollView>
-
-        </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
-
-    </FrameLayout>
+    </RelativeLayout>
 
 </LinearLayout>
