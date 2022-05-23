@@ -4,18 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Debug;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -23,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -132,6 +137,16 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Copied! " + colorCode, Toast.LENGTH_SHORT).show();
     }
 
+    private void openSaveDialog() {
+        Dialog dialog = new Dialog(this, R.style.SimpleDialog);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.setContentView(R.layout.dialog_variants_list);
+        dialog.setCancelable(true);
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,5 +173,6 @@ public class MainActivity extends AppCompatActivity {
         colorOnClick(4);
 
         findViewById(R.id.button_copy_clickable).setOnClickListener((View v) -> copyColor());
+        findViewById(R.id.button_download_clickable).setOnClickListener((View v) -> openSaveDialog());
     }
 }

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Previewer</string>
     <string name="app_name_full">Monet Color Previewer</string>
+    <string name="result_copy">Copied!</string>
+    <string name="action_copy">Copy to Clipboard</string>
+    <string name="action_copy_json">Copy as JSON</string>
+    <string name="action_copy_xml">Copy as XML</string>
+    <string name="action_copy_java">Copy as Java Array</string>
+    <string name="action_copy_csharp">Copy as C# Array</string>
 </resources>
