@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.38564102564102565" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2565" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2715" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1985" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/drawable/shape_round.xml" value="0.1595" />
         <entry key="app/src/main/res/drawable/shape_rounded_top.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/dialog_copy_preview.xml" value="0.3640625" />
         <entry key="app/src/main/res/layout/dialog_variants_entry.xml" value="0.33" />
         <entry key="app/src/main/res/layout/dialog_variants_list.xml" value="0.3640625" />
         <entry key="app/src/main/res/layout/layout_color_entry.xml" value="0.17806484295845998" />

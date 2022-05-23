@@ -33,12 +33,30 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 public class MainActivity extends AppCompatActivity {
 
     public static class Entry {
-        int color;
-        String name;
+        private int color;
+        private String name;
+        private String shortName;
+
+        public int getColor() {
+            return color;
+        }
+
+        public String getHEX(Context context) {
+            return String.format("#%06X", (0xFFFFFF & context.getColor(color)));
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getShortName() {
+            return shortName;
+        }
 
         public Entry (int id, String name) {
             this.color = id;
             this.name = name;
+            this.shortName = name.substring("@android:color/system_".length() - 1);
         }
     }
 
@@ -119,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
     private View backgroundView;
     private int selectedColorPosition;
 
+    public static Entry[] getColors() {
+        return colors;
+    }
+
     private void colorOnClick (int position) {
         Entry entry = colors[position];
         backgroundView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
@@ -144,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.setCancelable(true);
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         dialog.show();
     }
 

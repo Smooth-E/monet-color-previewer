@@ -44,7 +44,7 @@
         android:layout_weight="7"
         android:orientation="horizontal"
         android:gravity="right"
-        android:padding="5dp">
+        android:padding="7dp">
 
         <FrameLayout
             android:layout_alignParentRight="true"
@@ -78,7 +78,7 @@
             android:layout_toLeftOf="@id/button_download"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="7dp"
             android:id="@+id/button_copy"
             android:background="@drawable/shape_round"
             android:backgroundTint="?attr/colorPrimaryVariant">
