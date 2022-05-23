@@ -26,7 +26,8 @@
         android:background="@drawable/shape_button"
         android:backgroundTint="?attr/colorSecondary"
         app:porterduffxfermode="DST_IN"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:id="@+id/background">
 
         <LinearLayout
             android:id="@+id/color_list"
@@ -49,22 +50,23 @@
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:focusable="true"
-            android:id="@+id/button_download">
+            android:id="@+id/button_download"
+            android:background="@drawable/shape_round"
+            android:backgroundTint="?attr/colorPrimaryVariant">
 
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_round"
-                android:backgroundTint="?attr/colorPrimaryVariant">
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/button_copy_clickable">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/ic_round_file_copy_24"
+                    android:src="@drawable/ic_twotone_content_paste_24"
                     app:tint="?attr/colorOnSecondary"
                     android:padding="10dp"/>
 
@@ -77,22 +79,23 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="5dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:focusable="true"
-            android:id="@+id/button_copy">
+            android:id="@+id/button_copy"
+            android:background="@drawable/shape_round"
+            android:backgroundTint="?attr/colorPrimaryVariant">
 
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_round"
-                android:backgroundTint="?attr/colorPrimaryVariant">
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/button_download_clickable">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/ic_round_file_copy_24"
+                    android:src="@drawable/ic_twotone_color_lens_24"
                     app:tint="?attr/colorOnSecondary"
                     android:padding="10dp"/>
 
@@ -121,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/ic_round_file_copy_24"
+                    android:src="@drawable/ic_twotone_content_paste_24"
                     android:padding="100dp"/>
 
                 <FrameLayout

@@ -109,11 +109,12 @@ public class MainActivity extends AppCompatActivity {
             new Entry(R.color.neutral2_1000, "@android:color/system_neutral2_1000"),
     };
 
-    private FrameLayout                  colorDroplet;
-    private TextView                     colorName;
+    private FrameLayout colorDroplet;
+    private TextView colorName;
+    private View backgroundView;
 
     private void colorOnClick (Entry entry) {
-        //colorParent.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
+        backgroundView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
         colorDroplet.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
         colorName.setText(entry.name);
     }
@@ -123,8 +124,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        colorDroplet  = findViewById(R.id.color_droplet);
-        colorName     = findViewById(R.id.color_name_text_view);
+        colorDroplet = findViewById(R.id.color_droplet);
+        colorName = findViewById(R.id.color_name_text_view);
+        backgroundView = findViewById(R.id.background);
 
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -133,12 +135,13 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout rowLayout = (LinearLayout) inflater.inflate(R.layout.layout_color_row, parent, false);
             for (int x = 0; x < 5; x++) {
                 FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.layout_color_entry, rowLayout, false);
-                layout.setBackgroundTintList(ColorStateList.valueOf(getColor(colors[y * 5 + x].color)));
+                int position = x * 13 + y;
+                layout.setBackgroundTintList(ColorStateList.valueOf(getColor(colors[position].color)));
+                layout.setOnClickListener((View v) -> colorOnClick(colors[position]));
                 rowLayout.addView(layout);
             }
             parent.addView(rowLayout);
         }
-
-        colorOnClick(colors[4]);
+        colorOnClick(colors[58]);
     }
 }
