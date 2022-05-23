@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,42 +8,50 @@
     android:backgroundTint="?attr/colorOnPrimary"
     android:paddingVertical="10dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copy Options"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingVertical="10dp"
-        android:textColor="?attr/colorOnSecondary"/>
+        android:orientation="vertical"
+        android:id="@+id/dialog_box">
 
-    <com.smoothie.monetcolors.CopyEntryView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:entry_icon="@drawable/ic_twotone_content_paste_24"
-        app:entry_name="@string/action_copy_xml"
-        android:id="@+id/copy_xml" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copy Options"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
+            android:textColor="?attr/colorOnSecondary"/>
 
-    <com.smoothie.monetcolors.CopyEntryView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:entry_icon="@drawable/ic_twotone_content_paste_24"
-        app:entry_name="@string/action_copy_json"
-        android:id="@+id/copy_json" />
+        <com.smoothie.monetcolors.CopyEntryView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entry_icon="@drawable/ic_twotone_content_paste_24"
+            app:entry_name="@string/action_copy_xml"
+            android:id="@+id/copy_xml" />
 
-    <com.smoothie.monetcolors.CopyEntryView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:entry_icon="@drawable/ic_twotone_content_paste_24"
-        app:entry_name="@string/action_copy_java"
-        android:id="@+id/copy_java" />
+        <com.smoothie.monetcolors.CopyEntryView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entry_icon="@drawable/ic_twotone_content_paste_24"
+            app:entry_name="@string/action_copy_json"
+            android:id="@+id/copy_json" />
 
-    <com.smoothie.monetcolors.CopyEntryView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:entry_icon="@drawable/ic_twotone_content_paste_24"
-        app:entry_name="@string/action_copy_csharp"
-        android:id="@+id/copy_csharp" />
+        <com.smoothie.monetcolors.CopyEntryView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entry_icon="@drawable/ic_twotone_content_paste_24"
+            app:entry_name="@string/action_copy_java"
+            android:id="@+id/copy_java" />
 
-</LinearLayout>
+        <com.smoothie.monetcolors.CopyEntryView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entry_icon="@drawable/ic_twotone_content_paste_24"
+            app:entry_name="@string/action_copy_csharp"
+            android:id="@+id/copy_csharp" />
+
+    </LinearLayout>
+
+</FrameLayout>

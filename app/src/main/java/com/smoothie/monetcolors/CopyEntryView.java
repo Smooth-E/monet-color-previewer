@@ -53,12 +53,14 @@ public class CopyEntryView extends LinearLayout {
                 .append("...\n").append(fileEnd);
         ((TextView) dialog.findViewById(R.id.template_preview)).setText(templatePreview);
 
-        Log.d("TAG", "onClick: clicked!");
-
+        MarginLayoutParams layoutParams = (MarginLayoutParams) dialog.findViewById(R.id.dialog_box).getLayoutParams();
+        layoutParams.setMargins(0, 0, 0, Tools.getNavigationBarHeight(getContext()));
+        dialog.findViewById(R.id.dialog_box).setLayoutParams(layoutParams);
+        
         dialog.show();
     }
 
-    void BuildView(Context context, AttributeSet attrs){
+    void BuildView(Context context, AttributeSet attrs) {
         inflate(context, R.layout.dialog_variants_entry, this);
         if (attrs != null) {
             TypedArray obtainedAttributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CopyEntryView, 0, 0);
