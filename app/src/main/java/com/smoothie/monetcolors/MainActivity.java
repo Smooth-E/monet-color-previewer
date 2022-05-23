@@ -112,11 +112,24 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout colorDroplet;
     private TextView colorName;
     private View backgroundView;
+    private int selectedColorPosition;
 
-    private void colorOnClick (Entry entry) {
+    private void colorOnClick (int position) {
+        Entry entry = colors[position];
         backgroundView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
         colorDroplet.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
         colorName.setText(entry.name);
+        selectedColorPosition = position;
+    }
+
+    private void copyColor() {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        Entry entry = colors[selectedColorPosition];
+        String colorCode = String.format("#%06X", (0xFFFFFF & getColor(entry.color)));
+        String text = entry.name + "\n" + colorCode;
+        ClipData clip = ClipData.newPlainText("Monet Color Value", text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "Copied! " + colorCode, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -137,11 +150,13 @@ public class MainActivity extends AppCompatActivity {
                 FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.layout_color_entry, rowLayout, false);
                 int position = x * 13 + y;
                 layout.setBackgroundTintList(ColorStateList.valueOf(getColor(colors[position].color)));
-                layout.setOnClickListener((View v) -> colorOnClick(colors[position]));
+                layout.setOnClickListener((View v) -> colorOnClick(position));
                 rowLayout.addView(layout);
             }
             parent.addView(rowLayout);
         }
-        colorOnClick(colors[58]);
+        colorOnClick(4);
+
+        findViewById(R.id.button_copy_clickable).setOnClickListener((View v) -> copyColor());
     }
 }
