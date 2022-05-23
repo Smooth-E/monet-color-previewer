@@ -18,19 +18,25 @@
         android:gravity="center"
         android:textSize="25sp"/>
 
-    <LinearLayout
-        android:id="@+id/colors_list"
+    <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
-        android:weightSum="13"
         android:background="@drawable/shape_button"
-        android:backgroundTint="?attr/colorSecondary"
-        android:orientation="vertical">
+        android:backgroundTint="?attr/colorSecondary">
 
+        <GridView
+            android:id="@+id/colors_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:background="@drawable/shape_button"
+            android:backgroundTint="?attr/colorSecondary"
+            android:orientation="vertical"
+            android:numColumns="5"
+            android:stretchMode="columnWidth"/>
 
-
-    </LinearLayout>
+    </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

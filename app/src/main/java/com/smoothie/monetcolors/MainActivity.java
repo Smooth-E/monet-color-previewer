@@ -1,5 +1,7 @@
 package com.smoothie.monetcolors;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
@@ -9,11 +11,14 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Debug;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +37,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    Entry[] colors = new Entry[] {
+    private static class GridViewAdapter extends ArrayAdapter<Entry> {
+
+        private int chipHeight;
+
+        public GridViewAdapter(@NonNull Context context, int resource, @NonNull Entry[] objects, int chipHeight) {
+            super(context, resource, objects);
+            this.chipHeight = chipHeight;
+            Log.d("tage", "GridViewAdapter: xhip height is: " + chipHeight);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            Log.d("ArrayAdapter", "getView: got a view!");
+
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.layout_color_entry, parent, false);
+            layout.findViewById(R.id.chip).setBackgroundTintList(ColorStateList.valueOf(getContext().getColor(colors[position].color)));
+            layout.findViewById(R.id.chip).setMinimumHeight(100);
+            //layout.setMinimumHeight(chipHeight);
+
+            return layout;
+        }
+    }
+
+    private  static Entry[] colors = new Entry[] {
             new Entry(R.color.accent1_0,    "@android:color/system_accent1_0"   ),
             new Entry(R.color.accent1_10,   "@android:color/system_accent1_10"  ),
             new Entry(R.color.accent1_50,   "@android:color/system_accent1_50"  ),
@@ -104,12 +135,12 @@ public class MainActivity extends AppCompatActivity {
             new Entry(R.color.neutral2_1000, "@android:color/system_neutral2_1000"),
     };
 
-    LinearLayout                 colorParent;
+    GridView                     colorGridView;
     FrameLayout                  background;
     FrameLayout                  colorDroplet;
     TextView                     colorName;
-    ExtendedFloatingActionButton fabHEX;
-    ExtendedFloatingActionButton fabUnity;
+
+    private static LayoutInflater inflater;
 
     private void colorOnClick (Entry entry) {
         //colorParent.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
@@ -122,24 +153,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        colorParent  = findViewById(R.id.colors_list);
-        background   = findViewById(R.id.background);
-        colorDroplet = findViewById(R.id.color_droplet);
-        colorName    = findViewById(R.id.color_name_text_view);
+        colorGridView = findViewById(R.id.colors_list);
+        colorDroplet  = findViewById(R.id.color_droplet);
+        colorName     = findViewById(R.id.color_name_text_view);
 
-        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        for (int y = 0; y < colors.length / 5; y++) {
-            LinearLayout rowLayout = (LinearLayout) inflater.inflate(R.layout.view_color_row, null);
-            for (int x = 0; x < 5; x++) {
-                FrameLayout colorEntryView = (FrameLayout) inflater.inflate(R.layout.view_color_entry, null);
-                Entry entry = colors[y * 5 + x];
-                colorEntryView.setOnClickListener((View v) -> colorOnClick(entry));
-                colorEntryView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
-                rowLayout.addView(colorEntryView);
-            }
-            colorParent.addView(rowLayout);
-        }
+        int height = getResources().getDisplayMetrics().heightPixels;
+        GridViewAdapter adapter = new GridViewAdapter(this, R.layout.layout_color_entry, colors, height / 10 * 8 / 13);
+        colorGridView.setAdapter(adapter);
+
         colorOnClick(colors[4]);
     }
 }
