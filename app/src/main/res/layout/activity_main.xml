@@ -5,46 +5,45 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:weightSum="10"
+    android:weightSum="100"
     android:background="?attr/colorOnPrimary"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="7"
         android:text="@string/app_name_full"
         android:textColor="?attr/colorOnSecondary"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
     <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="86"
         android:background="@drawable/shape_button"
-        android:backgroundTint="?attr/colorSecondary">
+        android:backgroundTint="?attr/colorSecondary"
+        app:porterduffxfermode="DST_IN"
+        android:padding="5dp">
 
-        <GridView
-            android:id="@+id/colors_list"
+        <LinearLayout
+            android:id="@+id/color_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="8"
-            android:background="@drawable/shape_button"
-            android:backgroundTint="?attr/colorSecondary"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:numColumns="5"
-            android:stretchMode="columnWidth"/>
+            android:weightSum="13"/>
 
     </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="7"
         android:orientation="horizontal"
         android:gravity="right"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <FrameLayout
             android:layout_alignParentRight="true"
@@ -58,7 +57,7 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_round"
                 android:backgroundTint="?attr/colorPrimaryVariant">
 
                 <ImageView
@@ -67,7 +66,7 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/ic_round_file_copy_24"
                     app:tint="?attr/colorOnSecondary"
-                    android:padding="15dp"/>
+                    android:padding="10dp"/>
 
             </FrameLayout>
 
@@ -77,7 +76,7 @@
             android:layout_toLeftOf="@id/button_download"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="5dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
@@ -86,7 +85,7 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_round"
                 android:backgroundTint="?attr/colorPrimaryVariant">
 
                 <ImageView
@@ -95,7 +94,7 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/ic_round_file_copy_24"
                     app:tint="?attr/colorOnSecondary"
-                    android:padding="15dp"/>
+                    android:padding="10dp"/>
 
             </FrameLayout>
 
@@ -104,7 +103,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/shape_button"
+            android:background="@drawable/shape_round"
             android:backgroundTint="?attr/colorPrimaryVariant"
             android:layout_toLeftOf="@id/button_copy"
             android:layout_alignParentLeft="true"
@@ -116,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:backgroundTint="?attr/colorOnSecondary"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_round">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -129,23 +128,23 @@
                     android:id="@+id/color_droplet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_round"
                     android:backgroundTint="?attr/colorPrimaryVariant"
                     android:layout_margin="2dp" />
 
             </FrameLayout>
 
             <TextView
+                android:id="@+id/color_name_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/color_droplet_outline"
-                android:id="@+id/color_name_text_view"
-                android:layout_marginLeft="10dp"
-                android:text=" @color/accent1_1000 "
                 android:gravity="center"
+                android:text=" @color/accent1_1000 "
                 android:textColor="?attr/colorOnSecondary"
-                android:textSize="15sp"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
