@@ -1,6 +1,8 @@
 package com.smoothie.monetcolors;
 
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CopyEntryView extends LinearLayout {
 
@@ -31,6 +34,24 @@ public class CopyEntryView extends LinearLayout {
         super(context);
         BuildView(context, null);
     }
+    
+    private void onTemplateClick() {
+        Context context = getContext();
+        StringBuilder stringBuilder = new StringBuilder(fileStart);
+        for (MainActivity.Entry entry : MainActivity.getColors()) {
+            stringBuilder.append(entryStart)
+                    .append(entry.getName())
+                    .append(entryMiddle)
+                    .append(entry.getHEX(context))
+                    .append(entryEnd);
+        }
+        stringBuilder.append(fileEnd);
+        
+        ClipboardManager clipboard = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("Monet Color Value", stringBuilder.toString());
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show();
+    }
 
     private void onClick() {
         Log.d("TAG", "onClick: clicked!");
@@ -50,13 +71,11 @@ public class CopyEntryView extends LinearLayout {
                 .append(entryStart).append(colors[1].getShortName())
                 .append(entryMiddle).append(colors[1].getHEX(getContext()))
                 .append(entryEnd)
-                .append("...\n").append(fileEnd);
+                .append("   ...\n").append(fileEnd);
         ((TextView) dialog.findViewById(R.id.template_preview)).setText(templatePreview);
 
-        MarginLayoutParams layoutParams = (MarginLayoutParams) dialog.findViewById(R.id.dialog_box).getLayoutParams();
-        layoutParams.setMargins(0, 0, 0, Tools.getNavigationBarHeight(getContext()));
-        dialog.findViewById(R.id.dialog_box).setLayoutParams(layoutParams);
-        
+        dialog.findViewById(R.id.button_copy).setOnClickListener((View v) -> onTemplateClick());
+
         dialog.show();
     }
 
@@ -66,6 +85,11 @@ public class CopyEntryView extends LinearLayout {
             TypedArray obtainedAttributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CopyEntryView, 0, 0);
             icon = obtainedAttributes.getResourceId(R.styleable.CopyEntryView_entry_icon, R.drawable.ic_launcher_foreground);
             name = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_name);
+            fileStart = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_file_start);
+            entryStart = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_entry_start);
+            entryMiddle = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_entry_middle);
+            entryEnd = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_entry_end);
+            fileEnd = obtainedAttributes.getString(R.styleable.CopyEntryView_entry_file_end);
         }
         ((ImageView) findViewById(R.id.icon)).setImageResource(icon);
         ((TextView) findViewById(R.id.text)).setText(name);

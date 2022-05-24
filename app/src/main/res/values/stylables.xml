@@ -2,6 +2,11 @@
 <resources>
     <declare-styleable name="CopyEntryView">
         <attr name="entry_name" format="string" />
-        <attr name="entry_icon" format="reference"/>
+        <attr name="entry_icon" format="reference" />
+        <attr name="entry_file_start" format="string" />
+        <attr name="entry_entry_start" format="string" />
+        <attr name="entry_entry_middle" format="string" />
+        <attr name="entry_entry_end" format="string" />
+        <attr name="entry_file_end" format="string" />
     </declare-styleable>
 </resources>

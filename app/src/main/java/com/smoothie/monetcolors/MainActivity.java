@@ -167,10 +167,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) dialog.findViewById(R.id.dialog_box).getLayoutParams();
-        layoutParams.setMargins(0, 0, 0, Tools.getNavigationBarHeight(this));
-        dialog.findViewById(R.id.dialog_box).setLayoutParams(layoutParams);
-
         dialog.show();
     }
 
