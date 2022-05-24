@@ -20,13 +20,57 @@ Moreover, the app now works on devices which run under API lower than 31 (Androi
 <table>
     <tr>
         <td>
-            <img src = "https://media.discordapp.net/attachments/486869413732155404/952971180543975424/Screenshot_20220314-214601_Monet_Color_Previewer.png?width=307&height=682">
+            <img src="./.media/01.png" />
         </td>
         <td>
-            <img src = "https://media.discordapp.net/attachments/486869413732155404/952971180762071110/Screenshot_20220314-214614_Monet_Color_Previewer.png?width=307&height=682">
+            <img src="./.media/02.png" />
         </td>
         <td>
-            <img src = "https://media.discordapp.net/attachments/486869413732155404/952971181026324490/Screenshot_20220314-214630_Monet_Color_Previewer.png?width=307&height=682">
+           <img src="./.media/03.png" />
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <img src="./.media/11.png" />
+        </td>
+        <td>
+            <img src="./.media/12.png" />
+        </td>
+        <td>
+           <img src="./.media/13.png" />
         </td>
     </tr>
 </table>
+
+<h2 align = "center"> Screenshots (Android 11 and lower) </h2>
+
+<table>
+    <tr>
+        <td>
+            <img src="./.media/21.png" />
+        </td>
+        <td>
+            <img src="./.media/22.png" />
+        </td>
+        <td>
+            <img src="./.media/23.png" />
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <img src="./.media/31.png" />
+        </td>
+        <td>
+            <img src="./.media/32.png" />
+        </td>
+        <td>
+           <img src="./.media/33.png" />
+        </td>
+    </tr>
+</table>
+
+<h2 align="center"> Licensing and resources </h2>
+
+Monet Color Previewer is licensed under the [BSD 2-Clause License](./LICENSE). You can use it freely, but I do not give any warranties. Also, if you find this app useful, it will be nice of you to share it with others and not forget to give me a credit.
+
+This project also uses external resources which are: [JetBrans Mono Font](https://www.jetbrains.com/lp/mono/) and [Google Material Icons](https://fonts.google.com/icons?icon.style=Two+tone&icon.set=Material+Icons)
