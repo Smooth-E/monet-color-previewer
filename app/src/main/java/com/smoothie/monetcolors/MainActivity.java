@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         public Entry (int id, String name) {
             this.color = id;
             this.name = name;
-            this.shortName = name.substring("@android:color/system_".length() - 1);
+            this.shortName = name.substring("@android:color/system_".length());
         }
     }
 

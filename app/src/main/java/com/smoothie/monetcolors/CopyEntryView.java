@@ -39,7 +39,7 @@ public class CopyEntryView extends LinearLayout {
         StringBuilder stringBuilder = new StringBuilder(fileStart);
         for (MainActivity.Entry entry : MainActivity.getColors()) {
             stringBuilder.append(entryStart)
-                    .append(entry.getName())
+                    .append(entry.getShortName())
                     .append(entryMiddle)
                     .append(entry.getHEX(context))
                     .append(entryEnd);

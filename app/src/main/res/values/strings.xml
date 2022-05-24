@@ -12,7 +12,7 @@
     <string name="copy_xml_entry_start">\ \ \ &lt;color name=\"</string>
     <string name="copy_xml_entry_middle">\"&gt;\ </string>
     <string name="copy_xml_entry_end">\ &lt;/color&gt;\n</string>
-    <string name="copY_xml_file_end">&lt;resources&gt;\n</string>
+    <string name="copY_xml_file_end">&lt;/resources&gt;\n</string>
 
     <string name="action_copy_java">Copy as Java Array</string>
 

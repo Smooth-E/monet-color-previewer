@@ -34,7 +34,8 @@
             android:padding="15dp"
             android:text="someTemplate {\n   some text\n   some more text\n}"
             android:textColor="?attr/colorSecondary"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:fontFamily="@font/jetbrains_mono_regular"/>
 
         <FrameLayout
             android:layout_width="match_parent"
