@@ -86,9 +86,6 @@ public class CopyEntryView extends LinearLayout {
         stringBuilder.append(entryEnd);
         return stringBuilder.toString();
     }
-    
-    private void onTemplateClick() {
-    }
 
     private void onClick() {
         Log.d("TAG", "onClick: clicked!");
@@ -106,6 +103,8 @@ public class CopyEntryView extends LinearLayout {
                 .append(getStringForEntry(1))
                 .append("   ...\n").append(fileEnd);
         ((TextView) dialog.findViewById(R.id.template_preview)).setText(templatePreview);
+
+        ((TextView) dialog.findViewById(R.id.preview_header)).setText(name);
 
         dialog.findViewById(R.id.button_copy).setOnClickListener(new OnCopyClickListener(this, parentDialog, dialog));
 

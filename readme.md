@@ -1,6 +1,12 @@
+<style>
+    table {
+        width: 100%;
+    }
+</style>
+
 <div align="center"> 
     <img 
-        src = "https://media.discordapp.net/attachments/486869413732155404/952965464240316546/ic_launcher_2_round.png" 
+        src = "./.media/icon.png" 
         alt = "App Icon" 
         width = 100px 
         height = 100px
@@ -17,7 +23,7 @@ Moreover, the app now works on devices which run under API lower than 31 (Androi
 
 <h2 align = "center"> Screenshots </h2>
 
-<table>
+<table align="center">
     <tr>
         <td>
             <img src="./.media/01.png" />
@@ -44,7 +50,7 @@ Moreover, the app now works on devices which run under API lower than 31 (Androi
 
 <h2 align = "center"> Screenshots (Android 11 and lower) </h2>
 
-<table>
+<table align="center">
     <tr>
         <td>
             <img src="./.media/21.png" />
