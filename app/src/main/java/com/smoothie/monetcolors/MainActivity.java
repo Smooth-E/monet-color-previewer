@@ -21,16 +21,16 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static class Entry {
-        private int color;
+        private int colorID;
         private String name;
         private String shortName;
 
-        public int getColor() {
-            return color;
+        public int getColor(Context context) {
+            return context.getColor(colorID);
         }
 
         public String getHEX(Context context) {
-            return String.format("#%06X", (0xFFFFFF & context.getColor(color)));
+            return String.format("#%06X", (0xFFFFFF & context.getColor(colorID)));
         }
 
         public String getName() {
@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public Entry (int id, String name) {
-            this.color = id;
+            this.colorID = id;
             this.name = name;
             this.shortName = name.substring("@android:color/system_".length());
         }
     }
 
-    private  static Entry[] colors = new Entry[] {
+    private static Entry[] colors = new Entry[] {
             new Entry(R.color.accent1_0,    "@android:color/system_accent1_0"   ),
             new Entry(R.color.accent1_10,   "@android:color/system_accent1_10"  ),
             new Entry(R.color.accent1_50,   "@android:color/system_accent1_50"  ),
@@ -131,20 +131,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void colorOnClick (int position) {
         Entry entry = colors[position];
-        backgroundView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
-        colorDroplet.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.color)));
-        colorName.setText(entry.name);
+        backgroundView.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.colorID)));
+        colorDroplet.setBackgroundTintList(ColorStateList.valueOf(getColor(entry.colorID)));
+        colorName.setText("system_" + entry.getShortName());
         selectedColorPosition = position;
     }
 
     private void copyColor() {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         Entry entry = colors[selectedColorPosition];
-        String colorCode = String.format("#%06X", (0xFFFFFF & getColor(entry.color)));
+        String colorCode = entry.getHEX(this);
         String text = entry.name + "\n" + colorCode;
         ClipData clip = ClipData.newPlainText("Monet Color Value", text);
         clipboard.setPrimaryClip(clip);
-        Toast.makeText(this, "Copied! " + colorCode, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.result_copy) + colorCode, Toast.LENGTH_SHORT).show();
     }
 
     private void openSaveDialog() {
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
             for (int x = 0; x < 5; x++) {
                 FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.layout_color_entry, rowLayout, false);
                 int position = x * 13 + y;
-                layout.setBackgroundTintList(ColorStateList.valueOf(getColor(colors[position].color)));
+                layout.setBackgroundTintList(ColorStateList.valueOf(getColor(colors[position].colorID)));
                 layout.setOnClickListener((View v) -> colorOnClick(position));
                 rowLayout.addView(layout);
             }

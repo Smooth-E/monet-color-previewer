@@ -70,18 +70,19 @@ public class CopyEntryView extends LinearLayout {
     }
 
     private String getStringForEntry(int entryID) {
-        MainActivity.Entry color = MainActivity.getColors()[entryID];
+        MainActivity.Entry colorEntry = MainActivity.getColors()[entryID];
         StringBuilder stringBuilder = new StringBuilder(entryStart)
-                .append(color.getShortName())
+                .append(colorEntry.getShortName())
                 .append(entryMiddle);
         if (rgbMode) {
-            stringBuilder.append(Color.red(color.getColor()));
+            int color = colorEntry.getColor(getContext());
+            stringBuilder.append(Color.red(color));
             stringBuilder.append(", ");
-            stringBuilder.append(Color.green(color.getColor()));
+            stringBuilder.append(Color.green(color));
             stringBuilder.append(", ");
-            stringBuilder.append(Color.blue(color.getColor()));
+            stringBuilder.append(Color.blue(color));
         }
-        else stringBuilder.append(color.getHEX(getContext()));
+        else stringBuilder.append(colorEntry.getHEX(getContext()));
         stringBuilder.append(entryEnd);
         return stringBuilder.toString();
     }
