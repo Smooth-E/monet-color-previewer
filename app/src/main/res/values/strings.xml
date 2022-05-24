@@ -5,17 +5,25 @@
     <string name="action_copy">Copy to Clipboard</string>
     <string name="header_copy_options">Copy Options</string>
 
-    <string name="action_copy_json">Copy as JSON</string>
-
     <string name="action_copy_xml">Copy as XML</string>
     <string name="copy_xml_file_start">&lt;?xml version=\"1.0\" encoding=\"utf-8\"\?\>\n&lt;resources&gt;\n</string>
     <string name="copy_xml_entry_start">\ \ \ &lt;color name=\"</string>
-    <string name="copy_xml_entry_middle">\"&gt;\ </string>
-    <string name="copy_xml_entry_end">\ &lt;/color&gt;\n</string>
-    <string name="copY_xml_file_end">&lt;/resources&gt;\n</string>
+    <string name="copy_xml_entry_middle">\"&gt;\n\ \ \ \ \ \ </string>
+    <string name="copy_xml_entry_end">\n\ \ \ &lt;/color&gt;\n</string>
+    <string name="copy_xml_file_end">&lt;/resources&gt;\n</string>
 
-    <string name="action_copy_java">Copy as Java Array</string>
+    <string name="action_copy_json">Copy as JSON</string>
+    <string name="copy_json_file_start">{\n</string>
+    <string name="copy_json_entry_start">\ \ \ \"</string>
+    <string name="copy_json_entry_middle">\":\ \"</string>
+    <string name="copy_json_entry_end">\",\n</string>
+    <string name="copy_json_file_end">}</string>
 
-    <string name="action_copy_csharp">Copy as C# Array</string>
+    <string name="action_copy_csharp">Copy as C# class for Unity</string>
+    <string name="copy_csharp_file_start">public class ColorSet {\n</string>
+    <string name="copy_csharp_entry_start">\ \ \ \ public static Color\ </string>
+    <string name="copy_csharp_entry_middle">\ =\ new Color32(</string>
+    <string name="copy_csharp_entry_end">);\n</string>
+    <string name="copy_csharp_file_end">}</string>
 
 </resources>

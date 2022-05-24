@@ -22,27 +22,39 @@
             android:gravity="center"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:paddingVertical="10dp"
             android:textColor="?attr/colorOnSecondary"/>
 
-        <TextView
-            android:id="@+id/template_preview"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
             android:background="@drawable/shape_button"
-            android:backgroundTint="?attr/colorOnSecondary"
-            android:padding="15dp"
-            android:text="someTemplate {\n   some text\n   some more text\n}"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="17sp"
-            android:fontFamily="@font/jetbrains_mono_regular"/>
+            android:backgroundTint="?attr/colorOnSecondary">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <TextView
+                    android:id="@+id/template_preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="someTemplate {\n   some text\n   some more text\n}"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/jetbrains_mono_regular" />
+
+            </HorizontalScrollView>
+
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="?attr/colorPrimaryVariant"
-            android:background="@drawable/shape_button"
-            android:layout_marginTop="10dp">
+            android:background="@drawable/shape_button" >
 
             <FrameLayout
                 android:layout_width="match_parent"

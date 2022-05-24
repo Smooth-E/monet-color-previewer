@@ -13,7 +13,9 @@
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/drawable/shape_rounded_top.xml" value="0.2565" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/font/jetbrains_mono.xml" value="0.22083333333333333" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/activity_main.xml" value="0.35778985507246375" />
-        <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_copy_preview.xml" value="0.19166666666666668" />
+        <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_copy_preview.xml" value="0.3" />
+        <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_variants_entry.xml" value="0.371875" />
+        <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_variants_list.xml" value="0.2543640897755611" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/view_color_entry.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/drawable/shape_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_round.xml" value="0.1595" />

@@ -8,5 +8,6 @@
         <attr name="entry_entry_middle" format="string" />
         <attr name="entry_entry_end" format="string" />
         <attr name="entry_file_end" format="string" />
+        <attr name="use_rgb_pattern" format="boolean" />
     </declare-styleable>
 </resources>
