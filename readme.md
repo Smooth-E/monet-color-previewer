@@ -1,9 +1,3 @@
-<style>
-    table {
-        width: 100%;
-    }
-</style>
-
 <div align="center"> 
     <img 
         src = "./.media/icon.png" 
