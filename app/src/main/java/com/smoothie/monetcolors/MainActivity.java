@@ -7,6 +7,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -187,7 +188,9 @@ public class MainActivity extends AppCompatActivity {
             }
             parent.addView(rowLayout);
         }
-        colorOnClick(4);
+
+        if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO) colorOnClick(4);
+        else colorOnClick(62);
 
         findViewById(R.id.button_copy_clickable).setOnClickListener((View v) -> copyColor());
         findViewById(R.id.button_download_clickable).setOnClickListener((View v) -> openSaveDialog());

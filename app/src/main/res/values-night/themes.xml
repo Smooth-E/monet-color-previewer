@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.MonetColorPreviewer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorSecondary">@color/accent1_10</item>
-        <item name="colorOnPrimary">@color/accent1_100</item>
-        <item name="colorOnSecondary">@color/accent1_800</item>
-        <item name="colorPrimaryVariant">@color/accent1_200</item>
+        <item name="colorSecondary">@color/neutral2_1000</item>
+        <item name="colorOnPrimary">@color/neutral2_900</item>
+        <item name="colorOnSecondary">@color/neutral1_300</item>
+        <item name="colorPrimaryVariant">@color/neutral2_800</item>
 
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
         <item name="android:navigationBarColor">?attr/colorOnPrimary</item>
