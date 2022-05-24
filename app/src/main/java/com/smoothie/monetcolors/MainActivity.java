@@ -155,6 +155,12 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
+        LinearLayout rootDialogView = (LinearLayout) dialog.findViewById(R.id.dialog_box);
+        for (int i = 0; i < rootDialogView.getChildCount(); i++) {
+            View entry = rootDialogView.getChildAt(i);
+            if (entry instanceof CopyEntryView) ((CopyEntryView) entry).setParentDialog(dialog);
+        }
+
         dialog.show();
     }
 

@@ -17,14 +17,43 @@ import android.widget.Toast;
 
 public class CopyEntryView extends LinearLayout {
 
-    int icon;
-    String name = "Copy as what?";
-    String fileStart = "defaultTemplate {\n";
-    String entryStart = "    \"";
-    String entryMiddle = "\": \"";
-    String entryEnd = "\";\n";
-    String fileEnd = "}";
-    boolean rgbMode;
+    private int icon;
+    private String name = "Copy as what?";
+    private String fileStart = "defaultTemplate {\n";
+    private String entryStart = "    \"";
+    private String entryMiddle = "\": \"";
+    private String entryEnd = "\";\n";
+    private String fileEnd = "}";
+    private boolean rgbMode;
+    private Dialog parentDialog;
+
+    private static class OnCopyClickListener implements View.OnClickListener {
+
+        private final CopyEntryView instance;
+        private final Dialog listDialog;
+        private final Dialog copyDialog;
+
+        public OnCopyClickListener(CopyEntryView instance, Dialog listDialog, Dialog copyDialog) {
+            this.instance = instance;
+            this.listDialog = listDialog;
+            this.copyDialog = copyDialog;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Context context = instance.getContext();
+            StringBuilder stringBuilder = new StringBuilder(instance.fileStart);
+            for (int i = 0; i < MainActivity.getColors().length; i++) stringBuilder.append(instance.getStringForEntry(i));
+            stringBuilder.append(instance.fileEnd);
+
+            ClipboardManager clipboard = (ClipboardManager) instance.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("Monet Color Value", stringBuilder.toString());
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show();
+            copyDialog.hide();
+            listDialog.hide();
+        }
+    }
 
     public CopyEntryView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -34,6 +63,10 @@ public class CopyEntryView extends LinearLayout {
     public CopyEntryView(Context context) {
         super(context);
         BuildView(context, null);
+    }
+
+    public void setParentDialog(Dialog dialog) {
+        this.parentDialog = dialog;
     }
 
     private String getStringForEntry(int entryID) {
@@ -54,15 +87,6 @@ public class CopyEntryView extends LinearLayout {
     }
     
     private void onTemplateClick() {
-        Context context = getContext();
-        StringBuilder stringBuilder = new StringBuilder(fileStart);
-        for (int i = 0; i < MainActivity.getColors().length; i++) stringBuilder.append(getStringForEntry(i));
-        stringBuilder.append(fileEnd);
-        
-        ClipboardManager clipboard = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("Monet Color Value", stringBuilder.toString());
-        clipboard.setPrimaryClip(clip);
-        Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show();
     }
 
     private void onClick() {
@@ -82,7 +106,7 @@ public class CopyEntryView extends LinearLayout {
                 .append("   ...\n").append(fileEnd);
         ((TextView) dialog.findViewById(R.id.template_preview)).setText(templatePreview);
 
-        dialog.findViewById(R.id.button_copy).setOnClickListener((View v) -> onTemplateClick());
+        dialog.findViewById(R.id.button_copy).setOnClickListener(new OnCopyClickListener(this, parentDialog, dialog));
 
         dialog.show();
     }
