@@ -13,7 +13,7 @@
     >
 </div>
 
-<h1 style = "text-align: center;"> Material You Color Previewer </h1>
+<h1 align="center"> Material You Color Previewer </h1>
 
 Use this simple app to view all available Material You colors. App will also show you the actual color ID, so you will be able to easily use it in your project.
 
