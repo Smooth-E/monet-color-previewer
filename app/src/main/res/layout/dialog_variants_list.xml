@@ -73,6 +73,19 @@
             app:entry_file_end=    "@string/copy_csharp_file_end"
             app:use_rgb_pattern="true"/>
 
+        <com.smoothie.monetcolors.CopyEntryView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entry_icon="@drawable/settings_ethernet_white_24dp"
+            app:entry_name="@string/action_copy_mcfu"
+            android:id="@+id/copy_mcfu"
+            app:entry_file_start=  "@string/copy_mcfu_file_start"
+            app:entry_entry_start= "@string/copy_mcfu_entry_start"
+            app:entry_entry_middle="@string/copy_mcfu_entry_middle"
+            app:entry_entry_end=   "@string/copy_mcfu_entry_end"
+            app:entry_file_end=    "@string/copy_mcfu_file_end"
+            app:use_rgb_pattern="true"/>
+
     </LinearLayout>
 
 </FrameLayout>

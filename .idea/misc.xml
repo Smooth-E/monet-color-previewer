@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -21,6 +20,7 @@
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_copy_preview.xml" value="0.3" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_variants_entry.xml" value="0.371875" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/dialog_variants_list.xml" value="0.2543640897755611" />
+        <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/layout_color_entry.xml" value="0.371875" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/layout/view_color_entry.xml" value="0.35778985507246375" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.191" />
         <entry key="..\:/Android Studio Apps/Monet Color Previewer/Monet Color Previewer/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.191" />
@@ -39,7 +39,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

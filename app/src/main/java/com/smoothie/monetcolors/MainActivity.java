@@ -8,8 +8,11 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -194,5 +197,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_copy_clickable).setOnClickListener((View v) -> copyColor());
         findViewById(R.id.button_download_clickable).setOnClickListener((View v) -> openSaveDialog());
+
+        TypedValue typedValue = new TypedValue();
+        TypedArray typedArray = this.obtainStyledAttributes(typedValue.data, new int[] { R.color.accent1_0 });
+        int color = typedArray.getColor(0, 0);
+        typedArray.recycle();
     }
 }

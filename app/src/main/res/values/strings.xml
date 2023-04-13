@@ -32,4 +32,11 @@
     <string name="copy_csharp_entry_middle">\ =\ new Color32(</string>
     <string name="copy_csharp_entry_end">);\n</string>
     <string name="copy_csharp_file_end">}</string>
+
+    <string name="action_copy_mcfu">Monet Colors for Unity Fallback</string>
+    <string name="copy_mcfu_file_start"></string>
+    <string name="copy_mcfu_entry_start"></string>
+    <string name="copy_mcfu_entry_middle">new Color32(</string>
+    <string name="copy_mcfu_entry_end">),\n</string>
+    <string name="copy_mcfu_file_end"></string>
 </resources>
