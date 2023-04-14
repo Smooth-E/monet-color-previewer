@@ -123,7 +123,7 @@ public class CopyEntryView extends LinearLayout {
         ((TextView) dialog.findViewById(R.id.preview_header)).setText(name);
 
         OnCopyClickListener listener = new OnCopyClickListener(this, parentDialog, dialog);
-        dialog.findViewById(R.id.button_copy).setOnClickListener(listener);
+        dialog.findViewById(R.id.button_copy_palette_parent).setOnClickListener(listener);
 
         dialog.show();
     }

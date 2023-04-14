@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/clickable"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:orientation="horizontal"
     android:padding="10dp"
     android:focusable="true"
     android:clickable="true"
-    android:background="?attr/selectableItemBackground">
+    android:background="?attr/selectableItemBackground"
+    >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_twotone_color_lens_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/icon"
+        app:tint="?attr/colorOnSecondary"
+        android:importantForAccessibility="no"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_twotone_color_lens_24"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/icon"
-            app:tint="?attr/colorOnSecondary" />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintEnd_toStartOf="@id/icon_placeholder"
+        tools:text="Some cool placeholder"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginHorizontal="10dp"
+        />
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/icon"
-            android:layout_toLeftOf="@id/icon_placeholder"
-            android:text="Some cool placeholder"
-            android:textColor="?attr/colorOnSecondary"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:layout_marginHorizontal="10dp"/>
+    <ImageView
+        android:id="@+id/icon_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_twotone_color_lens_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@android:color/transparent"
+        android:importantForAccessibility="no"
+        />
 
-        <ImageView
-            android:id="@+id/icon_placeholder"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_twotone_color_lens_24"
-            android:layout_alignParentRight="true"
-            app:tint="@android:color/transparent" />
-
-    </RelativeLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

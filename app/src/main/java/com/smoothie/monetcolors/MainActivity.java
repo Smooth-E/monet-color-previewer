@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
         boolean isLightMode = uiMode == Configuration.UI_MODE_NIGHT_NO;
         onColorClick(isLightMode ? 4 : 62);
 
-        findViewById(R.id.button_copy_clickable).setOnClickListener((View v) -> copyColor());
-        findViewById(R.id.button_download_clickable)
+        findViewById(R.id.button_copy_color).setOnClickListener((View v) -> copyColor());
+        findViewById(R.id.button_copy_palette)
                 .setOnClickListener((View v) -> openSaveDialog());
     }
 

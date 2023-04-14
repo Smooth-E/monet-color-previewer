@@ -7,4 +7,5 @@
     android:background="@drawable/shape_button"
     android:backgroundTintMode="multiply"
     android:backgroundTint="#000"
-    android:layout_margin="5dp"/>
+    android:layout_margin="5dp"
+    />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -7,63 +7,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:weightSum="100"
     android:background="?attr/colorOnPrimary"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TextView
-        android:layout_alignParentTop="true"
         android:id="@+id/text_view_header"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
         android:text="@string/app_name_full"
         android:textColor="?attr/colorOnSecondary"
-        android:gravity="center"
+        android:textStyle="bold"
         android:textSize="25sp"
-        android:textStyle="bold"/>
+        />
 
     <com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout
-        android:layout_above="@id/bottom_bar"
-        android:layout_below="@id/text_view_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintTop_toBottomOf="@id/text_view_header"
         android:background="@drawable/shape_button"
         android:backgroundTint="?attr/colorSecondary"
         app:porterduffxfermode="DST_IN"
         android:padding="5dp"
-        android:id="@+id/background">
+        android:id="@+id/background"
+        >
 
         <LinearLayout
             android:id="@+id/color_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="13"/>
+            android:weightSum="13"
+            />
 
     </com.christophesmet.android.views.maskableframelayout.MaskableFrameLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="start"
         android:orientation="horizontal"
-        android:padding="7dp">
+        android:padding="7dp"
+        >
 
         <FrameLayout
-            android:id="@+id/button_download"
+            android:id="@+id/button_copy_color_parent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
+            app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/shape_round"
-            android:backgroundTint="?attr/colorPrimaryVariant">
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            >
 
             <FrameLayout
-                android:id="@+id/button_copy_clickable"
+                android:id="@+id/button_copy_color"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -71,28 +78,32 @@
                     android:adjustViewBounds="true"
                     android:padding="10dp"
                     android:src="@drawable/ic_twotone_content_paste_24"
-                    app:tint="?attr/colorOnSecondary" />
+                    app:tint="?attr/colorOnSecondary"
+                    android:importantForAccessibility="no"
+                    />
 
             </FrameLayout>
 
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/button_copy"
+            android:id="@+id/button_copy_palette_parent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="7dp"
-            android:layout_toLeftOf="@id/button_download"
+            app:layout_constraintEnd_toStartOf="@id/button_copy_color_parent"
             android:background="@drawable/shape_round"
-            android:backgroundTint="?attr/colorPrimaryVariant">
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            >
 
             <FrameLayout
-                android:id="@+id/button_download_clickable"
+                android:id="@+id/button_copy_palette"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -100,35 +111,43 @@
                     android:adjustViewBounds="true"
                     android:padding="10dp"
                     android:src="@drawable/ic_twotone_color_lens_24"
-                    app:tint="?attr/colorOnSecondary" />
+                    app:tint="?attr/colorOnSecondary"
+                    android:importantForAccessibility="no"
+                    />
 
             </FrameLayout>
 
         </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/button_copy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_copy_palette_parent"
             android:background="@drawable/shape_round"
             android:backgroundTint="?attr/colorPrimaryVariant"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:layout_marginEnd="7dp"
+            >
 
             <FrameLayout
                 android:id="@+id/color_droplet_outline"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_round"
-                android:backgroundTint="?attr/colorOnSecondary">
+                android:backgroundTint="?attr/colorOnSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                >
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:padding="100dp"
-                    android:src="@drawable/ic_twotone_content_paste_24" />
+                    android:src="@drawable/ic_twotone_content_paste_24"
+                    android:importantForAccessibility="no"
+                    />
 
                 <FrameLayout
                     android:id="@+id/color_droplet"
@@ -136,24 +155,27 @@
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
                     android:background="@drawable/shape_round"
-                    android:backgroundTint="?attr/colorPrimaryVariant" />
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    />
 
             </FrameLayout>
 
             <TextView
                 android:id="@+id/color_name_text_view"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/color_droplet_outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/color_droplet_outline"
                 android:gravity="center"
                 android:text=" \@android:color/accent1_1000 "
                 android:textColor="?attr/colorOnSecondary"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="HardcodedText"
+                />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
