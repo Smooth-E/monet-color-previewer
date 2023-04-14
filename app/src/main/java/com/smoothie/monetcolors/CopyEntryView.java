@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 public class CopyEntryView extends LinearLayout {
 
+    private static final String TAG = "CopyEntryView";
+
     private int icon;
     private String name = "Copy as what?";
     private String fileStart = "defaultTemplate {\n";
@@ -42,14 +44,23 @@ public class CopyEntryView extends LinearLayout {
         @Override
         public void onClick(View view) {
             Context context = instance.getContext();
+
             StringBuilder stringBuilder = new StringBuilder(instance.fileStart);
-            for (int i = 0; i < MainActivity.getColors().length; i++) stringBuilder.append(instance.getStringForEntry(i));
+
+            for (int i = 0; i < MainActivity.getColors().length; i++)
+                stringBuilder.append(instance.getStringForEntry(i));
+
             stringBuilder.append(instance.fileEnd);
 
-            ClipboardManager clipboard = (ClipboardManager) instance.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("Monet Color Value", stringBuilder.toString());
+            ClipboardManager clipboard =
+                    (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+            String label = "Monet Color Value";
+            ClipData clip = ClipData.newPlainText(label, stringBuilder.toString());
             clipboard.setPrimaryClip(clip);
+
             Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show();
+
             copyDialog.hide();
             listDialog.hide();
         }
@@ -70,10 +81,12 @@ public class CopyEntryView extends LinearLayout {
     }
 
     private String getStringForEntry(int entryID) {
-        MainActivity.Entry colorEntry = MainActivity.getColors()[entryID];
+        ColorEntry colorEntry = MainActivity.getColors()[entryID];
+
         StringBuilder stringBuilder = new StringBuilder(entryStart)
                 .append(colorEntry.getShortName())
                 .append(entryMiddle);
+
         if (rgbMode) {
             int color = colorEntry.getColor(getContext());
             stringBuilder.append(Color.red(color));
@@ -82,13 +95,16 @@ public class CopyEntryView extends LinearLayout {
             stringBuilder.append(", ");
             stringBuilder.append(Color.blue(color));
         }
-        else stringBuilder.append(colorEntry.getHEX(getContext()));
+        else
+            stringBuilder.append(colorEntry.getHEX(getContext()));
+
         stringBuilder.append(entryEnd);
+
         return stringBuilder.toString();
     }
 
     private void onClick() {
-        Log.d("TAG", "onClick: clicked!");
+        Log.d(TAG, "onClick: clicked!");
 
         Dialog dialog = new Dialog(getContext(), R.style.SimpleDialog);
         dialog.setContentView(R.layout.dialog_copy_preview);
@@ -97,16 +113,17 @@ public class CopyEntryView extends LinearLayout {
         dialog.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setGravity(Gravity.BOTTOM);
 
-        MainActivity.Entry[] colors = MainActivity.getColors();
         StringBuilder templatePreview = new StringBuilder(fileStart)
                 .append(getStringForEntry(0))
                 .append(getStringForEntry(1))
                 .append("   ...\n").append(fileEnd);
+
         ((TextView) dialog.findViewById(R.id.template_preview)).setText(templatePreview);
 
         ((TextView) dialog.findViewById(R.id.preview_header)).setText(name);
 
-        dialog.findViewById(R.id.button_copy).setOnClickListener(new OnCopyClickListener(this, parentDialog, dialog));
+        OnCopyClickListener listener = new OnCopyClickListener(this, parentDialog, dialog);
+        dialog.findViewById(R.id.button_copy).setOnClickListener(listener);
 
         dialog.show();
     }
@@ -116,21 +133,62 @@ public class CopyEntryView extends LinearLayout {
         return string == null ? defaultValue : string;
     }
 
-    void BuildView(Context context, AttributeSet attrs) {
+    void BuildView(Context context, AttributeSet attributes) {
         inflate(context, R.layout.dialog_variants_entry, this);
-        if (attrs != null) {
-            TypedArray obtainedAttributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CopyEntryView, 0, 0);
-            icon = obtainedAttributes.getResourceId(R.styleable.CopyEntryView_entry_icon, R.drawable.ic_launcher_foreground);
+
+        if (attributes != null) {
+            TypedArray obtainedAttributes = context.getTheme().obtainStyledAttributes(
+                    attributes,
+                    R.styleable.CopyEntryView,
+                    0,
+                    0
+            );
+
+            icon = obtainedAttributes.getResourceId(
+                    R.styleable.CopyEntryView_entry_icon,
+                    R.drawable.ic_launcher_foreground
+            );
+
             name = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_name, name);
-            fileStart = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_file_start, fileStart);
-            entryStart = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_entry_start, entryStart);
-            entryMiddle = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_entry_middle, entryMiddle);
-            entryEnd = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_entry_end, entryEnd);
-            fileEnd = getString(obtainedAttributes, R.styleable.CopyEntryView_entry_file_end, fileEnd);
-            rgbMode = obtainedAttributes.getBoolean(R.styleable.CopyEntryView_use_rgb_pattern, false);
+
+            fileStart = getString(
+                    obtainedAttributes,
+                    R.styleable.CopyEntryView_entry_file_start,
+                    fileStart
+            );
+
+            entryStart = getString(
+                    obtainedAttributes,
+                    R.styleable.CopyEntryView_entry_entry_start,
+                    entryStart
+            );
+
+            entryMiddle = getString(
+                    obtainedAttributes,
+                    R.styleable.CopyEntryView_entry_entry_middle,
+                    entryMiddle
+            );
+
+            entryEnd = getString(
+                    obtainedAttributes,
+                    R.styleable.CopyEntryView_entry_entry_end,
+                    entryEnd
+            );
+
+            fileEnd = getString(
+                    obtainedAttributes,
+                    R.styleable.CopyEntryView_entry_file_end,
+                    fileEnd
+            );
+
+            rgbMode = obtainedAttributes
+                    .getBoolean(R.styleable.CopyEntryView_use_rgb_pattern, false);
         }
+
         ((ImageView) findViewById(R.id.icon)).setImageResource(icon);
         ((TextView) findViewById(R.id.text)).setText(name);
+
         findViewById(R.id.clickable).setOnClickListener((View v) -> onClick());
     }
+
 }
