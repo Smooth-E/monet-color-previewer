@@ -1,0 +1,3 @@
+[submodule "android-maskable-layout"]
+	path = android-maskable-layout
+	url = https://github.com/Smooth-E/android-maskable-layout.git
