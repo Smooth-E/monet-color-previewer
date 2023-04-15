@@ -118,7 +118,9 @@ public class MainActivity extends AppCompatActivity {
 
         ClipData clip = ClipData.newPlainText("Monet Color Value", text);
         clipboard.setPrimaryClip(clip);
-        Toast.makeText(this, getResources().getString(R.string.result_copy) + colorCode, Toast.LENGTH_SHORT).show();
+
+        String message = getResources().getString(R.string.result_copy) + " " + colorCode;
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     private void openSaveDialog() {

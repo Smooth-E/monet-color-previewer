@@ -59,7 +59,8 @@ public class CopyEntryView extends LinearLayout {
             ClipData clip = ClipData.newPlainText(label, stringBuilder.toString());
             clipboard.setPrimaryClip(clip);
 
-            Toast.makeText(context, "Copied!", Toast.LENGTH_SHORT).show();
+            String toastMessage = context.getString(R.string.result_copy);
+            Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
 
             copyDialog.hide();
             listDialog.hide();
@@ -104,7 +105,7 @@ public class CopyEntryView extends LinearLayout {
     }
 
     private void onClick() {
-        Log.d(TAG, "onClick: clicked!");
+        Log.d(TAG, "OnClick()");
 
         Dialog dialog = new Dialog(getContext(), R.style.SimpleDialog);
         dialog.setContentView(R.layout.dialog_copy_preview);

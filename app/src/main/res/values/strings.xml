@@ -4,34 +4,34 @@
     <string name="app_name_full">Monet Color Previewer</string>
     <string name="result_copy">Copied!</string>
     <string name="action_copy">Copy</string>
-    <string name="header_copy_options">Copy Options</string>
+    <string name="header_copy_options">Copy options</string>
 
-    <string name="content_description_copy_color">Copy Color</string>
-    <string name="content_description_copy_palette">Copy Entire Palette</string>
-    <string name="content_description_copy_code_snippet">Copy Code Snippet</string>
+    <string name="content_description_copy_color">Copy color</string>
+    <string name="content_description_copy_palette">Copy entire palette</string>
+    <string name="content_description_copy_code_snippet">Copy code snippet</string>
 
-    <string name="action_copy_xml">Copy as XML</string>
+    <string name="action_copy_xml">XML</string>
     <string name="copy_xml_file_start" translatable="false">&lt;?xml version=\"1.0\" encoding=\"utf-8\"\?\>\n&lt;resources&gt;\n</string>
     <string name="copy_xml_entry_start" translatable="false">\ \ \ &lt;color name=\"</string>
     <string name="copy_xml_entry_middle" translatable="false">\"&gt;\n\ \ \ \ \ \ </string>
     <string name="copy_xml_entry_end" translatable="false">\n\ \ \ &lt;/color&gt;\n</string>
     <string name="copy_xml_file_end" translatable="false">&lt;/resources&gt;\n</string>
 
-    <string name="action_copy_json">Copy as JSON</string>
+    <string name="action_copy_json">JSON</string>
     <string name="copy_json_file_start" translatable="false">{\n</string>
     <string name="copy_json_entry_start" translatable="false">\ \ \ \"</string>
     <string name="copy_json_entry_middle" translatable="false">\":\ \"</string>
     <string name="copy_json_entry_end" translatable="false">\",\n</string>
     <string name="copy_json_file_end" translatable="false">}</string>
 
-    <string name="action_copy_css">Copy as CSS variable set</string>
+    <string name="action_copy_css">CSS variable set</string>
     <string name="copy_css_file_start" translatable="false">.root {\n</string>
     <string name="copy_css_entry_start" translatable="false">\ \ \ \ --</string>
     <string name="copy_css_entry_middle" translatable="false">\ =\ </string>
     <string name="copy_css_entry_end" translatable="false">;\n</string>
     <string name="copy_css_file_end" translatable="false">}</string>
 
-    <string name="action_copy_csharp">Copy as C# class for Unity</string>
+    <string name="action_copy_csharp">C# class for Unity</string>
     <string name="copy_csharp_file_start" translatable="false">public class ColorSet {\n</string>
     <string name="copy_csharp_entry_start" translatable="false">\ \ \ \ public static Color\ </string>
     <string name="copy_csharp_entry_middle" translatable="false">\ =\ new Color32(</string>

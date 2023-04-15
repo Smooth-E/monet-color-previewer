@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Previewer</string>
+    <string name="app_name_full">Monet Color Previewer</string>
+    <string name="result_copy">Скопировано!</string>
+    <string name="action_copy">Скопировать</string>
+    <string name="header_copy_options">Варианты копирования</string>
+    <string name="content_description_copy_color">Скопировать цвет</string>
+    <string name="content_description_copy_palette">Скопировать палитру целиком</string>
+    <string name="content_description_copy_code_snippet">Скопировать код</string>
+    <string name="action_copy_xml">XML</string>
+    <string name="action_copy_json">JSON</string>
+    <string name="action_copy_css">Набор переменных CSS</string>
+    <string name="action_copy_csharp">Класс C# для Unity</string>
+
+</resources>
