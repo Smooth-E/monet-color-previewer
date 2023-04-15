@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dialog_box"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +15,7 @@
         android:id="@+id/preview_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copy as XML"
+        tools:text="Copy as XML"
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -60,12 +59,13 @@
             android:clickable="true"
             android:focusable="true"
             android:id="@+id/button_copy_palette_parent"
+            android:contentDescription="@string/content_description_copy_code_snippet"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Copy"
+            android:text="@string/action_copy"
             android:gravity="center"
             android:textSize="20sp"
             android:padding="5dp"

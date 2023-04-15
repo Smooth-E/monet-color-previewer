@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="accent1_0"> #FFFFFF </color>
     <color name="accent1_10"> #F9FCFF </color>
     <color name="accent1_50"> #E0F3FF </color>
@@ -65,4 +66,5 @@
     <color name="neutral2_800"> #2A3136 </color>
     <color name="neutral2_900"> #161C20 </color>
     <color name="neutral2_1000"> #000000 </color>
+
 </resources>

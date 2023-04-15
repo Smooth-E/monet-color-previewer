@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="SimpleDialog" parent="Theme.MonetColorPreviewer">
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -14,4 +15,5 @@
         <item name="android:windowEnterAnimation">@anim/dialog_show</item>
         <item name="android:windowExitAnimation">@anim/dialog_hide</item>
     </style>
+
 </resources>

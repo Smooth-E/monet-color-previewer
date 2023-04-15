@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="accent1_0">   @android:color/system_accent1_0   </color>
     <color name="accent1_10">  @android:color/system_accent1_10  </color>
     <color name="accent1_50">  @android:color/system_accent1_50  </color>
@@ -69,4 +70,5 @@
     <color name="neutral2_800"> @android:color/system_neutral2_800 </color>
     <color name="neutral2_900"> @android:color/system_neutral2_900 </color>
     <color name="neutral2_1000">@android:color/system_neutral2_1000</color>
+
 </resources>
