@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openSaveDialog() {
-        Dialog dialog = new Dialog(this, R.style.SimpleDialog);
+        Dialog dialog = new BottomInsetAwareDialog(this, R.style.SimpleDialog);
         dialog.setCanceledOnTouchOutside(true);
         dialog.setContentView(R.layout.dialog_variants_list);
         dialog.setCancelable(true);
@@ -134,9 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
 
-        LinearLayout rootDialogView = dialog.findViewById(R.id.dialog_box);
-        for (int i = 0; i < rootDialogView.getChildCount(); i++) {
-            View entry = rootDialogView.getChildAt(i);
+        LinearLayout dialogBox = dialog.findViewById(R.id.dialog_box);
+        for (int i = 0; i < dialogBox.getChildCount(); i++) {
+            View entry = dialogBox.getChildAt(i);
 
             if (entry instanceof CopyEntryView)
                 ((CopyEntryView) entry).setParentDialog(dialog);
