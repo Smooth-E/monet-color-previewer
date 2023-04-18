@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openSaveDialog() {
-        Dialog dialog = new BottomInsetAwareDialog(this, R.style.SimpleDialog);
+        Dialog dialog = new BottomInsetAwareDialog(this);
         dialog.setCanceledOnTouchOutside(true);
         dialog.setContentView(R.layout.dialog_variants_list);
         dialog.setCancelable(true);

@@ -107,7 +107,7 @@ public class CopyEntryView extends LinearLayout {
     private void onClick() {
         Log.d(TAG, "OnClick()");
 
-        Dialog dialog = new BottomInsetAwareDialog(getContext(), R.style.SimpleDialog);
+        Dialog dialog = new BottomInsetAwareDialog(getContext());
         dialog.setContentView(R.layout.dialog_copy_preview);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);

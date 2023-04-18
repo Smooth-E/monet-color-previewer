@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 
 public class BottomInsetAwareDialog extends Dialog {
 
-    public BottomInsetAwareDialog(@NonNull Context context, int themeResId) {
-        super(context, themeResId);
+    public BottomInsetAwareDialog(@NonNull Context context) {
+        super(context, R.style.SimpleDialog);
     }
 
     @Override
