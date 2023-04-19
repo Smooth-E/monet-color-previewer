@@ -75,7 +75,7 @@ Moreover, the app now works on devices which run under API lower than 31 (Androi
 
 When changing the UI state on your device (e.g. switching from light to dark theme) the app will most likely crash. It may crash in some cases when you are changing its activity state (e.g. returning to the app from a home screen or "Recent applications" screen). The cause of these crashes is the [android-maskable-layout library](https://github.com/Smooth-E/android-maskable-layout) which I am using to cut inner UI elements of rounded-cornered dialogs and scrollable views. Since this library is very outdated (last update in 2020, migrated to AndroidX by me in early spring 2023) I am planning to either replace it with Android's new `ShapeableImageView` where possible or patch the existing library further to resolve mentioned crashes.
 
-### Incinistent experience on different Android versions
+### Inconsistent experience on different Android versions
 
 Navigation bar looks differently on different API versions:
 
