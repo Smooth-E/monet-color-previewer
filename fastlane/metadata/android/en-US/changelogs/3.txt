@@ -1,0 +1,8 @@
+This release brings some technical improvements and fixes along with added Russian translations and improved visual experience. Here is the list of all changes made:
+
+- 💭 Added Russian translations.
+- 🔗 All dependencies were upgraded.
+- 🛠 The android-maskable-layout library was forked and migrated to AndroidX.
+- ✨ Bottom dialog animation stuttering was fixed. However, this resulted in some visual inconsistencies between different platform versions.
+
+Please note that this version contains some minor issues which are planned to be fixed in the next release. You can read more in repository's readme.
