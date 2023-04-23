@@ -1,4 +1,4 @@
 - 📱 New design. All colors are presented on one screen, no need to scroll.
 - 🌓 Dark and light themes are now available. Make it your own!
 - 📲 The lowest API required is now Marshmallow (Android 6). Run it on anything!
-- 🗃 Copy full set of colors from your device at once. Several patterns available.
+- 🗃 Copy the full set of colors from your device at once. Several formats are available.

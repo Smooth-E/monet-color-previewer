@@ -1,3 +1,3 @@
 <p><i>Material You Color Previewer</i> is a simple app that allows you to look through all Material You colors. It will also display the actual color ID, for you to easily use in your project.</p>
-<p>You can also copy full list of Monet Colors, as they ar set on your device, in the following formats: XML list for Android app development, JSON object, set of CSS variables and a C# class for Unity.</p>
+<p>You can also copy the full list of Monet Colors, as they are set on your device, in the following formats: XML list for Android app development, JSON object, set of CSS variables and a C# class for Unity.</p>
 <p>Moreover, the app works on devices which run under API lower than 31 (Android 12). In such cases the app will use a fallback set of colors (blue-ish Monet theme, as the one used in apps like Google Dialer on devices running under API 30 and lower).</p>

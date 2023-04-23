@@ -1,1 +1,1 @@
-Simply the first release of an app.
+The first release of the app.

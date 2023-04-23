@@ -18,9 +18,9 @@
     </a>
 </div>
 
-Use this simple app to view all available Material You colors. App will also show you the actual color ID, so you will be able to easily use it in your project.
+Use this simple app to view all available Material You colors. This app will also show you the actual color ID for you to easily use it in your project.
 
-Recently, more features had been added, so now you can copy full list of Monet Colors, as they ar set on your device. Available formats for copying the full palette of colors are the following: XML list for Android app development, JSON object, set of CSS variables and a C# class for Unity.
+You can also copy the full list of Monet Colors, as they are set on your device, in the following formats: XML list for Android app development, JSON object, set of CSS variables and a C# class for Unity.
 
 Moreover, the app now works on devices which run under API lower than 31 (Android 12). In such cases app will use a fallback set of colors (blue-ish Monet theme, as the one used in apps like Google Dialer on devices running API 30 and lower).
 
