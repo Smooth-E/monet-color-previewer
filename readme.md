@@ -1,73 +1,28 @@
-<div align="center"> 
-    <img 
-        src = ".media/icon.png" 
-        alt = "App Icon" 
-        width = 100px 
-        height = 100px
-    >
+
+<div align="center">
+    <img alt="Banner" src="fastlane/metadata/android/en-US/images/featureGraphic.png" width="99%"/>
 </div>
 
-<h1 align="center"> Material You Color Previewer </h1>
+<div align="center">
+    <img alt="Review the complete Material You palette" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="32.5%"/>
+    <img alt="Review and copy individual color values and names" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="32.5%"/>
+    <img alt="Copy entire palettes in various formats" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="32.5%"/>
+</div>
+
+<div align="center">
+    <a href="https://github.com/Smooth-E/monet-color-previewer/releases/latest" target="_blank" rel="nofollow noopener">
+        <img alt="Badge GitHub" src=".media/badge-github.png" width="40%"/>
+    </a>
+    <a href="https://apt.izzysoft.de/fdroid/index/apk/com.smoothie.monetcolors" target="_blank" rel="nofollow noopener">
+        <img alt="Badge IzzyOnDroid" src=".media/badge-izzy-on-droid.png" width="40%"/>
+    </a>
+</div>
 
 Use this simple app to view all available Material You colors. App will also show you the actual color ID, so you will be able to easily use it in your project.
 
 Recently, more features had been added, so now you can copy full list of Monet Colors, as they ar set on your device. Available formats for copying the full palette of colors are the following: XML list for Android app development, JSON object, set of CSS variables and a C# class for Unity.
 
 Moreover, the app now works on devices which run under API lower than 31 (Android 12). In such cases app will use a fallback set of colors (blue-ish Monet theme, as the one used in apps like Google Dialer on devices running API 30 and lower).
-
-## Screenshots
-
-<table align="center">
-    <tr>
-        <td>
-            <img src=".media/01.png" />
-        </td>
-        <td>
-            <img src=".media/02.png" />
-        </td>
-        <td>
-           <img src=".media/03.png" />
-        </td>
-    </tr>
-        <tr>
-        <td>
-            <img src=".media/11.png" />
-        </td>
-        <td>
-            <img src=".media/12.png" />
-        </td>
-        <td>
-           <img src=".media/13.png" />
-        </td>
-    </tr>
-</table>
-
-## Screenshots (Android 11 and lower)
-
-<table align="center">
-    <tr>
-        <td>
-            <img src=".media/21.png" />
-        </td>
-        <td>
-            <img src=".media/22.png" />
-        </td>
-        <td>
-            <img src=".media/23.png" />
-        </td>
-    </tr>
-        <tr>
-        <td>
-            <img src=".media/31.png" />
-        </td>
-        <td>
-            <img src=".media/32.png" />
-        </td>
-        <td>
-           <img src=".media/33.png" />
-        </td>
-    </tr>
-</table>
 
 ## Known issues
 
