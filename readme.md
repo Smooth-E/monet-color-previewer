@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img alt="Banner" src="fastlane/metadata/android/en-US/images/featureGraphic.png" width="99%"/>
+    <img alt="Banner" src="fastlane/metadata/android/en-US/images/featureGraphic.png" width="98.5%"/>
 </div>
 
 <div align="center">
